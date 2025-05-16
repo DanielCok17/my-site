@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo. Nullam sit amet nunc nec purus tincidunt aliquam. Nullam sit amet nunc nec purus tincidunt aliquam.",
+  "name": "Martin Švec",
+  "title": "Product Owner, Well code a.s.",
+  "feedback": "Daniel bol kľúčovým členom tímu pri vývoji platformy MyHero. Jeho schopnosť rýchlo sa zorientovať v nových technológiách a navrhovať efektívne riešenia nám umožnila dodať produkt načas a v špičkovej kvalite. Spoluprácu s ním odporúčam každému, kto hľadá spoľahlivého a kreatívneho developera.",
   "image": "https://i.pravatar.cc/150?img=12",
-  "stars": 3,
-  "createdAt": "2025-01-01"
+  "stars": 5,
+  "createdAt": "2024-05-01"
 }

@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo. Nullam sit amet nunc nec purus tincidunt aliquam. Nullam sit amet nunc nec purus tincidunt aliquam.",
-  "image": "https://i.pravatar.cc/150?img=12",
+  "name": "Lucia Šimková",
+  "title": "Project Manager, Pixelmate",
+  "feedback": "Profesionálny prístup, rýchle dodanie a kvalitný kód. S Danielom budeme radi spolupracovať aj v budúcnosti. Odporúčam každému, kto hľadá zodpovedného developera.",
+  "image": "https://i.pravatar.cc/150?img=8",
   "stars": 5,
-  "createdAt": "2025-01-01"
+  "createdAt": "2022-12-01"
 }

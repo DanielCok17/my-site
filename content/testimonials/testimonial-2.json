@@ -1,8 +1,8 @@
 {
-  "name": "John Doe",
-  "title": "CEO",
-  "feedback": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien egestas fermentum eget auctor justo.",
-  "image": "https://i.pravatar.cc/150?img=12",
+  "name": "Jana Kováčová",
+  "title": "Team Lead, ON Semiconductor Slovakia",
+  "feedback": "Daniel sa rýchlo stal oporou nášho vývojového tímu. Vďaka jeho znalostiam Node.js a Reactu sme úspešne nasadili cloud monitoring systém, ktorý denne používajú stovky zamestnancov. Oceňujem jeho samostatnosť a zodpovednosť.",
+  "image": "https://i.pravatar.cc/150?img=13",
   "stars": 5,
-  "createdAt": "2025-01-01"
+  "createdAt": "2023-10-01"
 }

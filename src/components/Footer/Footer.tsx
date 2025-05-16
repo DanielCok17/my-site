@@ -1,102 +1,81 @@
 import { footerLinks, languages } from '@/appData'
 import { socials } from '@/appData/personal'
 import Logo from '../Navbar/Logo'
+import { MsgIcon, PhoneIcon } from '@/utils/icons'
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary relative flex min-h-[560px] flex-col justify-between gap-20 overflow-hidden px-4 py-14 md:p-14">
-      <div className="relative z-20 grid grid-cols-1 items-start gap-20 md:grid-cols-2 md:gap-12">
-        <div>
-          <h5 className="mb-8 flex items-center gap-2">
+    <footer className="bg-secondary relative flex flex-col items-center justify-between px-4 py-14 md:p-14">
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        {/* Logo & About */}
+        <div className="flex flex-col items-center md:items-start gap-4">
+          <div className="flex items-center gap-2">
             <Logo width={30} height={24} />
-            <span className="text-neutral text-lg font-medium">Logoipsum</span>
-          </h5>
-          <p className="text-tertiary-content">
-            The first free end-to-end analytics service for the site, designed to work with
-            enterprises of various levels and business segments.
+            <span className="text-neutral text-xl font-bold">Daniel Cok</span>
+          </div>
+          <p className="text-tertiary-content text-center md:text-left text-sm max-w-xs">
+            Full-stack web developer. Building modern, scalable, and beautiful web apps.
           </p>
-          <a
-            href="#"
-            className="text-neutral mt-4 inline-flex items-center gap-2 text-xs hover:underline">
-            More about us <span className="bg-neutral inline-block size-[10px] rounded-full" />
-          </a>
-        </div>
-
-        <div className="flex flex-wrap gap-8">
-          {footerLinks.map((link) => (
-            <a
-              href={link.href}
-              key={link.href}
-              className="text-tertiary-content hover:text-neutral transition-colors duration-300 hover:underline">
-              {link.title}.
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative z-20 flex flex-col-reverse gap-20 md:grid md:grid-cols-2 md:gap-12">
-        <div className="grid grid-cols-2 gap-4">
-          <ul className="flex flex-col gap-4">
+          <div className="flex gap-3 mt-2">
             {socials.map((item, index) => (
-              <li key={index} className="cursor-pointer bg-transparent">
+              <a
+                key={index}
+                href={item.href}
+                target={item.target}
+                rel="noopener noreferrer"
+                className="text-neutral hover:text-accent transition-colors duration-200 text-2xl">
+                {item.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Quick Links */}
+        <div className="flex flex-col items-center gap-2">
+          <h5 className="text-neutral text-lg font-semibold mb-2">Quick Links</h5>
+          <ul className="flex flex-col gap-1 text-tertiary-content text-sm">
+            {footerLinks.map((link) => (
+              <li key={link.href}>
                 <a
-                  href={item.href}
-                  className="text-neutral transition-color hover:text-neutral/50 h-full w-full duration-300">
-                  {item.icon}
+                  href={link.href}
+                  className="hover:text-accent transition-colors duration-200">
+                  {link.title}
                 </a>
               </li>
             ))}
           </ul>
-          <p className="text-tertiary-content flex flex-col self-end text-right text-xs md:text-center">
-            <span>© 2025 — Copyright</span>
-            <span>All Rights reserved</span>
-          </p>
         </div>
 
-        <div className="flex flex-col justify-between gap-[200px] md:flex-row md:gap-8">
-          <div className="space-y-10 md:self-end">
-            <div className="flex flex-col">
-              <h5 className="text-neutral mb-4 text-lg font-medium">Contact Us</h5>
-              <a
-                href="mailto:johndoe@gmail.com"
-                className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                johndoe@gmail.com
-              </a>
-              <a
-                href="tel:+92 3123456789"
-                className="text-tertiary-content hover:text-neutral text-sm font-light transition-colors duration-300">
-                +92 3123456789
-              </a>
-            </div>
-            <div>
-              <div>
-                <h5 className="text-neutral mb-4 text-lg font-medium">Location</h5>
-                <address className="text-tertiary-content flex flex-col text-sm font-light">
-                  <span>123456, Pakistan</span>
-                  <span>Karachi 22/5/8, Office 4</span>
-                </address>
-              </div>
-            </div>
+        {/* Contact Info */}
+        <div className="flex flex-col items-center md:items-end gap-2">
+          <h5 className="text-neutral text-lg font-semibold mb-2">Contact</h5>
+          <div className="flex items-center gap-2 text-tertiary-content text-sm">
+            <MsgIcon />
+            <a href="mailto:cokydano@gmail.com" className="hover:text-accent transition-colors duration-200">cokydano@gmail.com</a>
           </div>
-
-          <div className="md:self-end">
-            <p className="text-neutral mb-8 text-sm md:text-right">Languages</p>
-            <div className="flex gap-8 md:gap-4 lg:gap-8">
-              {languages.map((language, idx) => (
-                <span
-                  key={language}
-                  className={idx === 0 ? 'text-neutral' : 'text-tertiary-content'}>
-                  {language}
-                </span>
-              ))}
-            </div>
+          <div className="flex items-center gap-2 text-tertiary-content text-sm">
+            <PhoneIcon />
+            <a href="tel:+421917387255" className="hover:text-accent transition-colors duration-200">+421917387255</a>
+          </div>
+          <div className="flex items-center gap-2 text-tertiary-content text-sm mt-2">
+            <span className="font-medium">Location:</span>
+            <span>Nitra, Slovakia</span>
           </div>
         </div>
       </div>
 
-      <div className="bg-neutral/4 absolute top-1/2 -right-[40%] z-0 h-[120dvw] w-[120dvw] -translate-y-1/2 rounded-full p-14 md:top-0 md:-right-[255px] md:-bottom-[450px] md:size-[1030px] md:-translate-y-0 md:p-20">
-        <div className="bg-neutral/4 size-full rounded-full p-14 md:p-20">
-          <div className="bg-neutral/5 size-full rounded-full" />
+      {/* Bottom Bar */}
+      <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-between border-t border-neutral/20 pt-6 mt-6 gap-4">
+        <span className="text-tertiary-content text-xs">© {new Date().getFullYear()} Daniel Cok. All rights reserved.</span>
+        <div className="flex gap-3 text-xs text-tertiary-content">
+          <span>Languages:</span>
+          {languages.map((language, idx) => (
+            <span
+              key={language}
+              className={idx === 0 ? 'text-neutral font-semibold' : ''}>
+              {language}
+            </span>
+          ))}
         </div>
       </div>
     </footer>
