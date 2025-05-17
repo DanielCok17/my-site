@@ -81,17 +81,17 @@ export const serviceData = [
   {
     icon: ReactIcon,
     title: 'LLM models',
-    shortDescription: 'Implementácia a integrácia veľkých jazykových modelov (LLM) pre vaše projekty.',
+    shortDescription: 'Implementation and integration of Large Language Models (LLM) for your projects.',
   },
   {
     icon: NodejsIcon,
     title: 'RAG',
-    shortDescription: 'Retrieval-Augmented Generation: prepojenie AI s vašimi dátami pre presnejšie odpovede.',
+    shortDescription: 'Retrieval-Augmented Generation: connecting AI with your data for more accurate responses.',
   },
   {
     icon: TypescriptIcon,
     title: 'AI',
-    shortDescription: 'Návrh a vývoj AI riešení na mieru podľa vašich potrieb.',
+    shortDescription: 'Custom design and development of AI solutions tailored to your needs.',
   },
   {
     icon: JavaScriptIcon,
