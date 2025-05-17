@@ -10,10 +10,7 @@ import Script from 'next/script'
 const firaCode = Fira_Code({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 const title = 'Daniel Cok | Full-Stack Web Developer'
-
-const description =
-  "Skilled full-stack web developer. I build responsive, user-friendly websites with React, NextJS, and NodeJS. Let's bring your vision to life. Hire me today!"
-
+const description = "Skilled full-stack web developer specializing in React, Next.js, Node.js, and AI solutions. Based in Slovakia. Let's bring your vision to life with modern web technologies."
 const url = process.env.NEXT_PUBLIC_SITE_URL
 
 export const metadata: Metadata = {
@@ -54,6 +51,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL!),
   alternates: {
     canonical: url,
+    languages: {
+      'en-US': url,
+      'sk-SK': `${url}?lang=sk`,
+    },
   },
   openGraph: {
     title: 'Daniel Cok | Full-Stack Web Developer',
@@ -70,6 +71,7 @@ export const metadata: Metadata = {
       },
     ],
     locale: 'en_US',
+    alternateLocale: 'sk_SK',
   },
   twitter: {
     title: 'Daniel Cok | Full-Stack Web Developer',
@@ -86,9 +88,25 @@ export const metadata: Metadata = {
   },
   authors: [{ name: 'Daniel Cok', url: 'https://danielcok.sk' }],
   publisher: 'Daniel Cok',
-  robots: 'index, follow',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'abc123def456',
+  },
   themeColor: '#011627',
   viewport: 'width=device-width, initial-scale=1',
+  other: {
+    'msapplication-TileColor': '#011627',
+  },
 }
 
 export default function RootLayout({
@@ -115,7 +133,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-XXXXXXXXXX', {
+              page_path: window.location.pathname,
+              send_page_view: true
+            });
           `}
         </Script>
       </body>

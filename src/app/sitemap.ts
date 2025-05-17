@@ -3,30 +3,32 @@ import type { MetadataRoute } from 'next'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL!
 
-  return [
+  // Main pages
+  const routes = [
+    '',
+    '/#projects',
+    '/#services',
+    '/#skills',
+    '/#testimonials',
+    '/#contact',
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1 : 0.8,
+  }))
+
+  // Add language variants
+  const languageVariants = routes.flatMap((route) => [
     {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
+      ...route,
+      url: `${route.url}?lang=sk`,
     },
     {
-      url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      ...route,
+      url: `${route.url}?lang=en`,
     },
-    {
-      url: `${baseUrl}/#services`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ]
+  ])
+
+  return languageVariants
 }
