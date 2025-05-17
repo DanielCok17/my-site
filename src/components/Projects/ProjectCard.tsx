@@ -1,3 +1,5 @@
+'use client'
+
 import { Project } from '@/lib/types'
 import Image from 'next/image'
 import { Earning, GithubIcon, Likes, PreviewIcon, Star, Timer } from '../../utils/icons'
@@ -58,7 +60,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             src={cover}
             width={150}
             height={80}
-            alt="Project Cover"
+            alt={`Daniel Cok Project: ${title} - ${shortDescription}`}
             className="h-[80px] w-[150px] rounded-md object-cover shadow-[0px_1.66px_3.74px_-1.25px_#18274B1F]"
           />
         </figure>
@@ -73,7 +75,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             <a
               href={livePreview}
               className="text-accent flex gap-2 text-sm underline underline-offset-[3px] transition-all duration-75 ease-linear hover:scale-105 md:text-base"
-              target="_blank">
+              target="_blank"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'project_live_preview_click', {
+                    event_category: 'engagement',
+                    event_label: `Project: ${title}`,
+                  });
+                }
+              }}
+            >
               <PreviewIcon className="h-auto w-[18px] md:w-5" />
               <span>Live Preview</span>
             </a>
@@ -82,7 +93,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             <a
               href={githubLink}
               className="text-accent flex gap-2 text-sm underline underline-offset-[3px] transition-all duration-75 ease-linear hover:scale-105 md:text-base"
-              target="_blank">
+              target="_blank"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'project_github_link_click', {
+                    event_category: 'engagement',
+                    event_label: `Project: ${title}`,
+                  });
+                }
+              }}
+            >
               <GithubIcon className="w-[18px] md:w-5" />
               <span>Github Link</span>
             </a>

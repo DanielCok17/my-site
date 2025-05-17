@@ -307,6 +307,27 @@ const PhoneIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   )
 }
 
+const LLMIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" {...props}>
+    <circle cx="20" cy="20" r="18" stroke="#00BFFF" strokeWidth="3" fill="none"/>
+    <text x="50%" y="55%" textAnchor="middle" fill="#00BFFF" fontSize="12" fontFamily="Arial" dy=".3em">LLM</text>
+  </svg>
+)
+
+const RAGIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" {...props}>
+    <rect x="4" y="4" width="32" height="32" rx="8" stroke="#39FF14" strokeWidth="3" fill="none"/>
+    <text x="50%" y="55%" textAnchor="middle" fill="#39FF14" fontSize="12" fontFamily="Arial" dy=".3em">RAG</text>
+  </svg>
+)
+
+const AIIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" {...props}>
+    <ellipse cx="20" cy="20" rx="16" ry="18" stroke="#FF00FF" strokeWidth="3" fill="none"/>
+    <text x="50%" y="55%" textAnchor="middle" fill="#FF00FF" fontSize="12" fontFamily="Arial" dy=".3em">AI</text>
+  </svg>
+)
+
 export {
   ArrowLeftIcon,
   ArrowRightIcon,
@@ -337,4 +358,7 @@ export {
   Timer,
   TypescriptIcon,
   X,
+  LLMIcon,
+  RAGIcon,
+  AIIcon,
 }

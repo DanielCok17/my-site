@@ -5,6 +5,12 @@ import Image from 'next/image'
 import { HeroImage } from '../../utils/images'
 import Ellipse from './Ellipse'
 
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 const Hero = () => {
   const ellipseRef = useRotatingAnimation()
   const role = useRoleSwitcher({ roles: ['FULLSTACK DEVELOPER', 'SLOVAK HACKER', 'SOLOPRENEUR'] })
@@ -26,7 +32,16 @@ const Hero = () => {
             <a
               href="#contact"
               aria-label="Connect with me"
-              className="bg-accent min-w-32 cursor-pointer rounded-lg px-[14px] py-[10px] text-center text-sm font-medium text-[#00071E]">
+              className="bg-accent min-w-32 cursor-pointer rounded-lg px-[14px] py-[10px] text-center text-sm font-medium text-[#00071E]"
+              onClick={() => {
+                if (typeof window !== 'undefined' && window.gtag) {
+                  window.gtag('event', 'hire_me_click', {
+                    event_category: 'engagement',
+                    event_label: 'Hero Hire Me',
+                  });
+                }
+              }}
+            >
               Hire Me
             </a>
             <a
@@ -48,7 +63,7 @@ const Hero = () => {
               fill={true}
               priority={true}
               sizes="(min-width: 1024px) 25.75rem, (min-width: 768px) 20rem, (min-width: 640px) 15rem, 14rem"
-              alt="Daniel Cok - Full Stack Developer"
+              alt="Daniel Cok - Full-Stack Web Developer, Next.js, React, Slovakia"
               className="object-contain p-7"
             />
             <Ellipse

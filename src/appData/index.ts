@@ -8,7 +8,10 @@ import {
   ReactIcon,
   SocketIcon,
   TailwindCSS,
-  TypescriptIcon
+  TypescriptIcon,
+  LLMIcon,
+  RAGIcon,
+  AIIcon,
 } from '../utils/icons'
 
 // Project Data
@@ -79,17 +82,17 @@ export const projects = [
 // Service Data
 export const serviceData = [
   {
-    icon: ReactIcon,
+    icon: LLMIcon,
     title: 'LLM models',
     shortDescription: 'Implementation and integration of Large Language Models (LLM) for your projects.',
   },
   {
-    icon: NodejsIcon,
+    icon: RAGIcon,
     title: 'RAG',
     shortDescription: 'Retrieval-Augmented Generation: connecting AI with your data for more accurate responses.',
   },
   {
-    icon: TypescriptIcon,
+    icon: AIIcon,
     title: 'AI',
     shortDescription: 'Custom design and development of AI solutions tailored to your needs.',
   },
@@ -198,4 +201,4 @@ export const themes = [
   },
 ]
 
-export const languages = ['En', 'Es', 'Fr', 'De', 'Ru']
+export const languages = ['EN', 'SK']

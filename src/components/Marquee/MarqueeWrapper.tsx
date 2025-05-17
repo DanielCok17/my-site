@@ -26,19 +26,21 @@ const marqueeAnimation: MarqueeAnimationType = (element, elementWidth, windowWid
 
 const MarqueeWrapper: React.FC<MarqueeWrapperProps> = ({ children, className = '' }) => {
   const elementRef = useRef<HTMLDivElement>(null)
-  const [windowWidth, setWindowWidth] = useState(0)
+  const [windowWidth, setWindowWidth] = useState<number | null>(null)
 
   useEffect(() => {
+    // Nastavíme šířku okna až na klientovi
     setWindowWidth(window.innerWidth)
-
-    if (elementRef.current) {
-      const elementWidth = elementRef.current.getBoundingClientRect().width
-      marqueeAnimation(elementRef.current as HTMLElement, elementWidth, windowWidth)
-    }
-
     const handleResize = () => setWindowWidth(window.innerWidth)
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (windowWidth !== null && elementRef.current) {
+      const elementWidth = elementRef.current.getBoundingClientRect().width
+      marqueeAnimation(elementRef.current as HTMLElement, elementWidth, windowWidth)
+    }
   }, [windowWidth])
 
   return (

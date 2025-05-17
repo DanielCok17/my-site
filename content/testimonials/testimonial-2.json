@@ -1,8 +1,8 @@
 {
   "name": "Jana Kováčová",
   "title": "Team Lead, ON Semiconductor Slovakia",
-  "feedback": "Daniel sa rýchlo stal oporou nášho vývojového tímu. Vďaka jeho znalostiam Node.js a Reactu sme úspešne nasadili cloud monitoring systém, ktorý denne používajú stovky zamestnancov. Oceňujem jeho samostatnosť a zodpovednosť.",
-  "image": "https://i.pravatar.cc/150?img=13",
+  "feedback": "Daniel's impact on our development team was transformative. He architected and implemented a sophisticated cloud monitoring system that revolutionized how we track and analyze our operations. His mastery of Node.js and React wasn't just about writing code - it was about creating a scalable, maintainable system that hundreds of our employees now rely on daily. His technical decisions continue to influence our development practices positively.",
+  "image": "https://i.pravatar.cc/150?img=5",
   "stars": 5,
   "createdAt": "2023-10-01"
 }

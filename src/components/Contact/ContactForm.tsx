@@ -16,7 +16,14 @@ const ContactForm = () => {
   }
 
   return (
-    <form action={formAction}>
+    <form action={formAction} onSubmit={() => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'contact_form_submit', {
+          event_category: 'engagement',
+          event_label: 'Contact Form',
+        });
+      }
+    }}>
       <Input label="Full name" id="name" name="name" placeholder="Your name here" required />
       <Input
         label="Email address"

@@ -1,3 +1,5 @@
+'use client'
+
 import { footerLinks, languages } from '@/appData'
 import { socials } from '@/appData/personal'
 import Logo from '../Navbar/Logo'
@@ -51,11 +53,25 @@ const Footer = () => {
           <h5 className="text-neutral text-lg font-semibold mb-2">Contact</h5>
           <div className="flex items-center gap-2 text-tertiary-content text-sm">
             <MsgIcon />
-            <a href="mailto:cokydano@gmail.com" className="hover:text-accent transition-colors duration-200">cokydano@gmail.com</a>
+            <a href="mailto:cokydano@gmail.com" className="hover:text-accent transition-colors duration-200" onClick={() => {
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'footer_email_click', {
+                  event_category: 'engagement',
+                  event_label: 'Footer Email',
+                });
+              }
+            }}>cokydano@gmail.com</a>
           </div>
           <div className="flex items-center gap-2 text-tertiary-content text-sm">
             <PhoneIcon />
-            <a href="tel:+421917387255" className="hover:text-accent transition-colors duration-200">+421917387255</a>
+            <a href="tel:+421917387255" className="hover:text-accent transition-colors duration-200" onClick={() => {
+              if (typeof window !== 'undefined' && window.gtag) {
+                window.gtag('event', 'footer_phone_click', {
+                  event_category: 'engagement',
+                  event_label: 'Footer Phone',
+                });
+              }
+            }}>+421917387255</a>
           </div>
           <div className="flex items-center gap-2 text-tertiary-content text-sm mt-2">
             <span className="font-medium">Location:</span>
