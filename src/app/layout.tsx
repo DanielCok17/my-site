@@ -143,3 +143,10 @@ export default function RootLayout({
     </html>
   )
 }
+
+export async function getHeroTranslations(lang: 'en' | 'sk') {
+  if (lang === 'sk') {
+    return (await import('@/messages/hero.sk.json')).default
+  }
+  return (await import('@/messages/hero.en.json')).default
+}

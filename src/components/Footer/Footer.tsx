@@ -83,16 +83,6 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-between border-t border-neutral/20 pt-6 mt-6 gap-4">
         <span className="text-tertiary-content text-xs">© {new Date().getFullYear()} Daniel Cok. All rights reserved.</span>
-        <div className="flex gap-3 text-xs text-tertiary-content">
-          <span>Languages:</span>
-          {languages.map((language, idx) => (
-            <span
-              key={language}
-              className={idx === 0 ? 'text-neutral font-semibold' : ''}>
-              {language}
-            </span>
-          ))}
-        </div>
       </div>
     </footer>
   )

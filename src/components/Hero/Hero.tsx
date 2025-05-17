@@ -4,6 +4,7 @@ import useRotatingAnimation from '@/hooks/useRotatingAnimation'
 import Image from 'next/image'
 import { HeroImage } from '../../utils/images'
 import Ellipse from './Ellipse'
+import { useSearchParams } from 'next/navigation'
 
 declare global {
   interface Window {
@@ -11,21 +12,41 @@ declare global {
   }
 }
 
+const heroTranslations = {
+  en: {
+    greeting: "Hi - I'm Daniel Cok",
+    role: ['FULLSTACK DEVELOPER', 'SLOVAK HACKER', 'SOLOPRENEUR'],
+    subtitle: 'Crafting innovative solutions to solve real-world problems',
+    hireMe: 'Hire Me',
+    linkedin: 'LinkedIn Profile',
+  },
+  sk: {
+    greeting: "Ahoj - som Daniel Cok",
+    role: ['FULLSTACK VÝVOJÁR', 'SLOVENSKÝ HACKER', 'SOLOPRENEUR'],
+    subtitle: 'Tvorím inovatívne riešenia pre skutočné problémy',
+    hireMe: 'Najmi ma',
+    linkedin: 'LinkedIn profil',
+  },
+}
+
 const Hero = () => {
+  const searchParams = useSearchParams()
+  const lang = searchParams?.get('lang') === 'sk' ? 'sk' : 'en'
+  const t = heroTranslations[lang]
   const ellipseRef = useRotatingAnimation()
-  const role = useRoleSwitcher({ roles: ['FULLSTACK DEVELOPER', 'SLOVAK HACKER', 'SOLOPRENEUR'] })
+  const role = useRoleSwitcher({ roles: t.role })
 
   return (
     <section className="bg-primary bg-small-glow bg-small-glow-position md:bg-large-glow-position lg:bg-large-glow min-h-[calc(dvh-4rem)] bg-no-repeat">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-4 px-4 pt-12 pb-10 md:grid-cols-2 lg:p-4">
         <div className="flex min-h-48 flex-col justify-between lg:min-h-56 lg:max-w-[33.75rem]">
           <h1>
-            <span className="text-neutral mb-2 block text-3xl font-bold">Hi - I'm Daniel Cok</span>
+            <span className="text-neutral mb-2 block text-3xl font-bold">{t.greeting}</span>
             <span className="text-accent block text-[1.75rem] font-bold">{role}</span>
           </h1>
 
           <h2 className="text-neutral mt-3">
-            Crafting innovative solutions to solve real-world problems
+            {t.subtitle}
           </h2>
 
           <div className="mt-6 flex flex-wrap gap-6">
@@ -42,7 +63,7 @@ const Hero = () => {
                 }
               }}
             >
-              Hire Me
+              {t.hireMe}
             </a>
             <a
               href="https://www.linkedin.com/in/daniel-cok-45a3b6250/"
@@ -51,7 +72,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              LinkedIn Profile
+              {t.linkedin}
             </a>
           </div>
         </div>
