@@ -1,11 +1,11 @@
 {
   "priority": 3,
-  "title": "Project Epsilon",
-  "shortDescription": "A collection of engaging coding challenges designed to help developers improve their ReactJS skills by writing functional business logic. Your task is to make it functional by writing business logic, to improve your frontend skills",
-  "cover": "https://res.cloudinary.com/dyvkdwzcj/image/upload/v1656971294/waitlist-template_qr4l9k.png",
-  "type": "Free 🔥",
-  "livePreview": "https://example.com/epsilon",
-  "githubLink": "https://github.com/example/ReactJS-Coding-Challenges",
-  "githubStars": "40 Stars",
-  "numberOfSales": "138 Sales"
+  "title": "IT Courses for Kids",
+  "shortDescription": "Very popular after-school IT courses for children. Over 1200+ kids have learned programming basics and logical thinking. Note: The website needs an update – the current design is outdated!",
+  "cover": "/Screenshot 2025-05-17 at 01.53.56.png",
+  "type": "Very Popular",
+  "livePreview": "https://www.mladiprogramatori.sk/",
+  "siteAge": "4+ years",
+  "numberOfStudents": "1200+ children",
+  "visitors": "1200+ children"
 }

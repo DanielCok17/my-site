@@ -8,11 +8,22 @@ import {
   ReactIcon,
   SocketIcon,
   TailwindCSS,
-  TypescriptIcon,
+  TypescriptIcon
 } from '../utils/icons'
 
 // Project Data
 export const projects = [
+  {
+    priority: 0,
+    title: 'AI Legal Assistant',
+    shortDescription:
+      'A professional AI-powered legal assistant for Slovak and EU law. Provides precise legal analysis based on up-to-date legislation, court rulings, and expert commentaries. Built with Node.js, Next.js, Qdrant, and LangChain.',
+    cover:
+      'https://caplak.sk/_next/image?url=%2Fimages%2Fai-lawyer.png&w=384&q=75',
+    livePreview: 'https://caplak.sk/',
+    type: 'Main Project ⭐',
+    siteAge: 'Live',
+  },
   {
     priority: 1,
     title: 'Project Alpha',
@@ -67,6 +78,21 @@ export const projects = [
 
 // Service Data
 export const serviceData = [
+  {
+    icon: ReactIcon,
+    title: 'LLM models',
+    shortDescription: 'Implementácia a integrácia veľkých jazykových modelov (LLM) pre vaše projekty.',
+  },
+  {
+    icon: NodejsIcon,
+    title: 'RAG',
+    shortDescription: 'Retrieval-Augmented Generation: prepojenie AI s vašimi dátami pre presnejšie odpovede.',
+  },
+  {
+    icon: TypescriptIcon,
+    title: 'AI',
+    shortDescription: 'Návrh a vývoj AI riešení na mieru podľa vašich potrieb.',
+  },
   {
     icon: JavaScriptIcon,
     title: 'JavaScript Development',

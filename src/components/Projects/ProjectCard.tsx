@@ -54,7 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
           </ul>
         </div>
         <figure className="flex justify-end overflow-hidden">
-          <Image
+          <img
             src={cover}
             width={150}
             height={80}

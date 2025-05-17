@@ -30,9 +30,12 @@ const Hero = () => {
               Hire Me
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/daniel-cok-45a3b6250/"
               aria-label="View LinkedIn Profile"
-              className="text-neutral bg-secondary cursor-pointer rounded-lg px-[14px] py-[10px] text-sm">
+              className="text-neutral bg-secondary cursor-pointer rounded-lg px-[14px] py-[10px] text-sm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn Profile
             </a>
           </div>
