@@ -1,7 +1,9 @@
 {
   "priority": 4,
-  "title": "AI Google Form Auto-Filler",
-  "shortDescription": "Let AI fill out your Google Form automatically! Just enter the form URL and the system will scrape the form, generate answers using AI, and submit it for you.",
+  "title_en": "AI Google Form Auto-Filler",
+  "title_sk": "AI automatické vyplňovanie Google Formulárov",
+  "shortDescription_en": "Let AI fill out your Google Form automatically! Just enter the form URL and the system will scrape the form, generate answers using AI, and submit it for you.",
+  "shortDescription_sk": "Nechajte AI automaticky vyplniť váš Google formulár! Stačí zadať URL formulára a systém ho načíta, vygeneruje odpovede pomocou AI a odošle za vás.",
   "cover": "/Screenshot 2025-05-17 at 01.50.43.png",
   "livePreview": "https://google-form-autocomplete-nu.vercel.app/",
   "githubLink": "https://github.com/DanielCok17/google-form-autocomplete",

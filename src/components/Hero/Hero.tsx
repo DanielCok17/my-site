@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { HeroImage } from '../../utils/images'
 import Ellipse from './Ellipse'
 import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { getTranslations } from '@/utils/i18n'
 
 declare global {
   interface Window {
@@ -12,29 +14,18 @@ declare global {
   }
 }
 
-const heroTranslations = {
-  en: {
-    greeting: "Hi - I'm Daniel Cok",
-    role: ['FULLSTACK DEVELOPER', 'SLOVAK HACKER', 'SOLOPRENEUR'],
-    subtitle: 'Crafting innovative solutions to solve real-world problems',
-    hireMe: 'Hire Me',
-    linkedin: 'LinkedIn Profile',
-  },
-  sk: {
-    greeting: "Ahoj - som Daniel Cok",
-    role: ['FULLSTACK VÝVOJÁR', 'SLOVENSKÝ HACKER', 'SOLOPRENEUR'],
-    subtitle: 'Tvorím inovatívne riešenia pre skutočné problémy',
-    hireMe: 'Najmi ma',
-    linkedin: 'LinkedIn profil',
-  },
-}
-
 const Hero = () => {
   const searchParams = useSearchParams()
-  const lang = searchParams?.get('lang') === 'sk' ? 'sk' : 'en'
-  const t = heroTranslations[lang]
+  const lang = searchParams.get('lang') === 'sk' ? 'sk' : 'en'
+  const [t, setT] = useState<any>(null)
   const ellipseRef = useRotatingAnimation()
-  const role = useRoleSwitcher({ roles: t.role })
+
+  useEffect(() => {
+    getTranslations('hero', lang).then(setT)
+  }, [lang])
+
+  const role = useRoleSwitcher({ roles: t?.role || [] })
+  if (!t) return null
 
   return (
     <section className="bg-primary bg-small-glow bg-small-glow-position md:bg-large-glow-position lg:bg-large-glow min-h-[calc(dvh-4rem)] bg-no-repeat">
@@ -84,7 +75,7 @@ const Hero = () => {
               fill={true}
               priority={true}
               sizes="(min-width: 1024px) 25.75rem, (min-width: 768px) 20rem, (min-width: 640px) 15rem, 14rem"
-              alt="Daniel Cok - Full-Stack Web Developer, Next.js, React, Slovakia"
+              alt={t.altText || "Daniel Cok - Full-Stack Web Developer, Next.js, React, Slovakia"}
               className="object-contain p-7"
             />
             <Ellipse

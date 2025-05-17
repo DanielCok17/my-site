@@ -1,0 +1,22 @@
+{
+  "title": "Services / Offers:",
+  "subtitle": "I offer a wide range of services to ensure you have the best written code and stay ahead in the competition.",
+  "llm": "LLM models",
+  "llmDesc": "Implementation and integration of Large Language Models (LLM) for your projects.",
+  "rag": "RAG",
+  "ragDesc": "Retrieval-Augmented Generation: connecting AI with your data for more accurate responses.",
+  "ai": "AI",
+  "aiDesc": "Custom design and development of AI solutions tailored to your needs.",
+  "js": "JavaScript Development",
+  "jsDesc": "Creating dynamic and interactive web applications using JavaScript.",
+  "react": "React.js Development",
+  "reactDesc": "Building modern and responsive user interfaces with React.js.",
+  "node": "Node.js Backend",
+  "nodeDesc": "Developing scalable server-side applications using Node.js.",
+  "next": "Next.js Development",
+  "nextDesc": "Creating server-rendered React applications with Next.js.",
+  "ts": "TypeScript Development",
+  "tsDesc": "Ensuring robust and maintainable code with TypeScript.",
+  "tailwind": "Tailwind CSS Styling",
+  "tailwindDesc": "Designing beautiful and responsive interfaces with Tailwind CSS."
+} 

@@ -1,0 +1,20 @@
+{
+  "title": "Contact",
+  "subtitle": "Send me a message",
+  "description": "If you have any questions or are interested in working together, feel free to contact me via the form or directly by email/phone.",
+  "contactInfoTitle": "Contact Information",
+  "form": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your name here",
+    "email": "Email address",
+    "emailPlaceholder": "Your email address here",
+    "subject": "Subject",
+    "subjectPlaceholder": "Your subject here",
+    "message": "Message",
+    "messagePlaceholder": "Your message here",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending your message. Please try again."
+  }
+} 

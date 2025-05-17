@@ -3,5 +3,10 @@
   "role": ["FULLSTACK DEVELOPER", "SLOVAK HACKER", "SOLOPRENEUR"],
   "subtitle": "Crafting innovative solutions to solve real-world problems",
   "hireMe": "Hire Me",
-  "linkedin": "LinkedIn Profile"
+  "linkedin": "LinkedIn Profile",
+  "selectTheme": "Select theme",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+  "themeAqua": "Aqua",
+  "themeRetro": "Retro"
 } 

@@ -5,13 +5,21 @@ import { useActionState } from 'react'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 import Textarea from '../UI/Textarea'
+import { useEffect, useState } from 'react'
 
-const ContactForm = () => {
+const ContactForm = ({ t }: { t: any }) => {
   const [status, formAction, isPending] = useActionState(action, null)
+  const [message, setMessage] = useState('')
+
+  useEffect(() => {
+    if (status?.success) setMessage(t.form.success)
+    else if (status?.message) setMessage(t.form.error)
+    else setMessage('')
+  }, [status, t])
 
   if (status?.success) {
     return (
-      <p className="text-accent self-center text-center text-2xl font-medium">{status.message}</p>
+      <p className="text-accent self-center text-center text-2xl font-medium">{t.form.success}</p>
     )
   }
 
@@ -24,26 +32,26 @@ const ContactForm = () => {
         });
       }
     }}>
-      <Input label="Full name" id="name" name="name" placeholder="Your name here" required />
+      <Input label={t.form.fullName} id="name" name="name" placeholder={t.form.fullNamePlaceholder} required />
       <Input
-        label="Email address"
+        label={t.form.email}
         id="email"
         type="email"
         name="email"
-        placeholder="Your email address here"
+        placeholder={t.form.emailPlaceholder}
         required
       />
-      <Input label="Subject" id="subject" name="subject" placeholder="Your subject here" />
+      <Input label={t.form.subject} id="subject" name="subject" placeholder={t.form.subjectPlaceholder} />
       <Textarea
-        label="Message"
+        label={t.form.message}
         id="message"
         name="message"
-        placeholder="Your message here"
+        placeholder={t.form.messagePlaceholder}
         rows={7}
         required
       />
-      {!status?.success && <p className="my-2 font-light text-red-600">{status?.message}</p>}
-      <Button text={isPending ? 'Submitting...' : 'Submit'} disabled={isPending} />
+      {!status?.success && <p className="my-2 font-light text-red-600">{message}</p>}
+      <Button text={isPending ? t.form.submitting : t.form.submit} disabled={isPending} />
     </form>
   )
 }

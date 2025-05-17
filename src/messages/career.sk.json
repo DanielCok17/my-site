@@ -1,0 +1,35 @@
+{
+  "sectionTitle": "Kariérna chronológia",
+  "items": [
+    {
+      "year": "NOV 2024 - súčasnosť",
+      "title": "Medior developer",
+      "description": "Well code a.s.\nVyvíjal som platformu MyHero, ktorá umožňuje zákazníkom objednať si personalizované pozdravy. Navrhol a postavil som platformu s použitím React Native pre mobilný frontend a Node.js pre backend, čo zabezpečilo plynulý používateľský zážitok a efektívne doručovanie obsahu."
+    },
+    {
+      "year": "JAN 2024 - NOV 2024",
+      "title": "Medior developer",
+      "description": "Well code a.s.\nVyvíjal som AI-poháňané predikčné modely pre športové výsledky, zamerané na tipérov. Platforma bola postavená modernými technológiami – Next.js/NodeJS + React s TypeScriptom. https://ai-tips.eu/en"
+    },
+    {
+      "year": "SEP 2022 - SEP 2023",
+      "title": "Medior full stack developer",
+      "description": "ON Semiconductor Slovakia, a.s., Bratislava\nProjekt cloud monitoringu v Node.js a Reacte. Zodpovedal som za návrh a vývoj backend API v Node.js."
+    },
+    {
+      "year": "NOV 2021 - APR 2022",
+      "title": "Junior full stack developer",
+      "description": "ASData group, s.r.o., Nitra\nFull stack vývojár v PHP, používal som framework Laravel."
+    },
+    {
+      "year": "OCT 2020 - NOV 2021",
+      "title": "Junior back-end developer",
+      "description": "NIKE Slovakia s. r. o., Bratislava\nJunior back-end vývojár. Práca s PHP – Nette, Symfony."
+    },
+    {
+      "year": "2018 - 2024",
+      "title": "FIIT - Fakulta informatiky a informačných technológií",
+      "description": "Softvérové inžinierstvo\nSlovenská technická univerzita v Bratislave."
+    }
+  ]
+} 

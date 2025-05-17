@@ -12,6 +12,11 @@ export interface Project {
   numberOfSales?: string
   type: string
   siteAge?: string
+  // Multilingual fields
+  title_sk?: string
+  title_en?: string
+  shortDescription_sk?: string
+  shortDescription_en?: string
 }
 
 export interface Heading {

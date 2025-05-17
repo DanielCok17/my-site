@@ -2,39 +2,33 @@
 
 import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BurgerIcon, CloseIcon } from '../../utils/icons'
 import Logo from './Logo'
 import LanguageSwitcher from './LanguageSwitcher'
-
-const navItems = [
-  {
-    label: '_home',
-    href: '/',
-  },
-  {
-    label: '_projects',
-    href: '/#projects',
-  },
-  {
-    label: '_services',
-    href: '/#services',
-  },
-  {
-    label: '_contact-me',
-    href: '/#contact',
-  },
-]
+import { getTranslations } from '@/utils/i18n'
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false)
   const pathname = usePathname()
-  const searchParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
-  const lang = searchParams?.get('lang') === 'sk' ? 'sk' : 'en';
+  const searchParams = useSearchParams()
+  const lang = searchParams.get('lang') === 'sk' ? 'sk' : 'en'
+  const [t, setT] = useState<any>(null)
+
+  useEffect(() => {
+    getTranslations('navbar', lang).then(setT)
+  }, [lang])
 
   const toggleMenu = () => {
     setIsVisible(!isVisible)
   }
+
+  const navItems = t ? [
+    { label: t.home, href: '/' },
+    { label: t.projects, href: '/#projects' },
+    { label: t.services, href: '/#services' },
+    { label: t.contact, href: '/#contact' },
+  ] : []
 
   return (
     <nav className="bg-primary border-border h-16 overflow-hidden border-b">

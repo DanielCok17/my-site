@@ -1,0 +1,22 @@
+{
+  "title": "Služby / Ponuka:",
+  "subtitle": "Ponúkam širokú škálu služieb, aby ste mali vždy kvalitný kód a náskok pred konkurenciou.",
+  "llm": "LLM modely",
+  "llmDesc": "Implementácia a integrácia veľkých jazykových modelov (LLM) pre vaše projekty.",
+  "rag": "RAG",
+  "ragDesc": "Retrieval-Augmented Generation: prepojenie AI s vašimi dátami pre presnejšie odpovede.",
+  "ai": "AI",
+  "aiDesc": "Návrh a vývoj AI riešení na mieru vašim potrebám.",
+  "js": "JavaScript vývoj",
+  "jsDesc": "Tvorba dynamických a interaktívnych webových aplikácií v JavaScripte.",
+  "react": "React.js vývoj",
+  "reactDesc": "Moderné a responzívne používateľské rozhrania v React.js.",
+  "node": "Node.js Backend",
+  "nodeDesc": "Vývoj škálovateľných serverových aplikácií v Node.js.",
+  "next": "Next.js vývoj",
+  "nextDesc": "Tvorba server-renderovaných React aplikácií v Next.js.",
+  "ts": "TypeScript vývoj",
+  "tsDesc": "Zabezpečenie robustného a udržateľného kódu v TypeScripte.",
+  "tailwind": "Tailwind CSS štýlovanie",
+  "tailwindDesc": "Dizajn krásnych a responzívnych rozhraní s Tailwind CSS."
+} 

@@ -1,3 +1,5 @@
+'use client'
+
 interface SectionHeadingTypes {
   title: string
   subtitle?: string

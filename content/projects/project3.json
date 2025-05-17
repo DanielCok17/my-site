@@ -1,7 +1,9 @@
 {
   "priority": 3,
-  "title": "IT Courses for Kids",
-  "shortDescription": "Very popular after-school IT courses for children. Over 1200+ kids have learned programming basics and logical thinking. Note: The website needs an update – the current design is outdated!",
+  "title_en": "IT Courses for Kids",
+  "title_sk": "IT kurzy pre deti",
+  "shortDescription_en": "Very popular after-school IT courses for children. Over 1200+ kids have learned programming basics and logical thinking. Note: The website needs an update – the current design is outdated!",
+  "shortDescription_sk": "Veľmi obľúbené IT krúžky pre deti. Viac ako 1200 detí sa naučilo základy programovania a logického myslenia. Poznámka: Web potrebuje redizajn – aktuálny dizajn je zastaraný!",
   "cover": "/Screenshot 2025-05-17 at 01.53.56.png",
   "type": "Very Popular",
   "livePreview": "https://www.mladiprogramatori.sk/",

@@ -1,22 +1,33 @@
 'use client'
 
 import { Testimonial } from '@/lib/types'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SectionHeading from '../SectionHeading/SectionHeading'
 import TestimonialCard from './TestimonialCard'
+import { useSearchParams } from 'next/navigation'
+import { getTranslations } from '@/utils/i18n'
 
 interface TestimonialSectionProps {
   testimonials: Testimonial[]
 }
 
 const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials }) => {
+  const searchParams = useSearchParams()
+  const lang = searchParams.get('lang') === 'sk' ? 'sk' : 'en'
+  const [t, setT] = useState<any>(null)
   const [activeCard, setActiveCard] = useState(0)
+
+  useEffect(() => {
+    getTranslations('testimonials', lang).then(setT)
+  }, [lang])
+
+  if (!t) return null // Loader
 
   return (
     <section id="testimonials">
       <SectionHeading
-        title="// Testimonials"
-        subtitle="Don't just take our word for it - see what actual users of our service have to say about their experience."
+        title={t.title}
+        subtitle={t.subtitle}
       />
 
       <div className="hide-scrollbar my-8 flex gap-8 overflow-x-auto">

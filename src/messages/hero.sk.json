@@ -3,5 +3,10 @@
   "role": ["FULLSTACK VÝVOJÁR", "SLOVENSKÝ HACKER", "SOLOPRENEUR"],
   "subtitle": "Tvorím inovatívne riešenia pre skutočné problémy",
   "hireMe": "Najmi ma",
-  "linkedin": "LinkedIn profil"
+  "linkedin": "LinkedIn profil",
+  "selectTheme": "Vyberte tému",
+  "themeLight": "Svetlá",
+  "themeDark": "Tmavá",
+  "themeAqua": "Aqua",
+  "themeRetro": "Retro"
 } 

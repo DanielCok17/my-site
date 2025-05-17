@@ -13,9 +13,10 @@ const IconText: React.FC<{ icon: string; text: string }> = ({ icon, text }) => (
 
 interface ProjectCardProps {
   data: Project
+  t?: any // translations
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ data, t }) => {
   const {
     title,
     shortDescription,
@@ -31,16 +32,32 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
     cover,
   } = data
 
+  // Map type and status to translation if possible
+  let typeLabel = type
+  if (t) {
+    if (type?.toLowerCase().includes('main')) typeLabel = t.mainProject
+    else if (type?.toLowerCase().includes('client')) typeLabel = t.clientWork
+    else if (type?.toLowerCase().includes('free')) typeLabel = t.free
+    else if (type?.toLowerCase().includes('new')) typeLabel = t.new
+    else if (type?.toLowerCase().includes('very popular')) typeLabel = t.veryPopular || type
+    else if (type?.toLowerCase().includes('ai predictions')) typeLabel = t.aiPredictions || type
+    else if (type?.toLowerCase().includes('ai automation')) typeLabel = t.aiAutomation || type
+    else if (type?.toLowerCase().includes('live')) typeLabel = t.live || type
+  }
+
+  // Map status labels (like 'Live') in the card body
+  const liveLabel = t?.live || 'Live'
+
   return (
     <div className="bg-secondary border-border flex flex-col justify-between rounded-[14px] border p-5">
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1">
           <div className="flex flex-col flex-wrap gap-3 sm:flex-row sm:items-center">
             <h3 className="text-secondary-content text-lg font-medium md:font-semibold">{title}</h3>
-            {type && (
+            {typeLabel && (
               <span
-                className={`h-7 w-fit rounded-md bg-[#FFFFFF1A] p-1 text-sm ${type === 'New 🔥' ? 'animate-blink text-tag' : 'text-accent'} backdrop-blur-[80px]`}>
-                {type}
+                className={`h-7 w-fit rounded-md bg-[#FFFFFF1A] p-1 text-sm ${typeLabel === t?.new ? 'animate-blink text-tag' : 'text-accent'} backdrop-blur-[80px]`}>
+                {typeLabel}
               </span>
             )}
           </div>
@@ -53,6 +70,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
             {(ratings || githubStars) && (
               <IconText text={(ratings || githubStars)?.toString() || ''} icon={Star} />
             )}
+            {livePreview && <IconText text={liveLabel} icon={Timer} />}
           </ul>
         </div>
         <figure className="flex justify-end overflow-hidden">
@@ -86,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
               }}
             >
               <PreviewIcon className="h-auto w-[18px] md:w-5" />
-              <span>Live Preview</span>
+              <span>{t?.livePreview || 'Live Preview'}</span>
             </a>
           )}
           {githubLink && (
@@ -104,7 +122,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
               }}
             >
               <GithubIcon className="w-[18px] md:w-5" />
-              <span>Github Link</span>
+              <span>{t?.githubLink || 'Github Link'}</span>
             </a>
           )}
         </div>

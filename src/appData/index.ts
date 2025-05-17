@@ -82,46 +82,55 @@ export const projects = [
 // Service Data
 export const serviceData = [
   {
+    key: 'llm',
     icon: LLMIcon,
     title: 'LLM models',
     shortDescription: 'Implementation and integration of Large Language Models (LLM) for your projects.',
   },
   {
+    key: 'rag',
     icon: RAGIcon,
     title: 'RAG',
     shortDescription: 'Retrieval-Augmented Generation: connecting AI with your data for more accurate responses.',
   },
   {
+    key: 'ai',
     icon: AIIcon,
     title: 'AI',
     shortDescription: 'Custom design and development of AI solutions tailored to your needs.',
   },
   {
+    key: 'js',
     icon: JavaScriptIcon,
     title: 'JavaScript Development',
     shortDescription: 'Creating dynamic and interactive web applications using JavaScript.',
   },
   {
+    key: 'react',
     icon: ReactIcon,
     title: 'React.js Development',
     shortDescription: 'Building modern and responsive user interfaces with React.js.',
   },
   {
+    key: 'node',
     icon: NodejsIcon,
     title: 'Node.js Backend',
     shortDescription: 'Developing scalable server-side applications using Node.js.',
   },
   {
+    key: 'next',
     icon: NextjsIcon,
     title: 'Next.js Development',
     shortDescription: 'Creating server-rendered React applications with Next.js.',
   },
   {
+    key: 'ts',
     icon: TypescriptIcon,
     title: 'TypeScript Development',
     shortDescription: 'Ensuring robust and maintainable code with TypeScript.',
   },
   {
+    key: 'tailwind',
     icon: TailwindCSS,
     title: 'Tailwind CSS Styling',
     shortDescription: 'Designing beautiful and responsive interfaces with Tailwind CSS.',
@@ -165,21 +174,10 @@ export const skillList = [
 ]
 
 export const footerLinks = [
-  { title: 'About', href: '#' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'Testimonials', href: '#testimonials' },
-  {
-    title: 'Blogs',
-    href: '#blogs',
-  },
-  {
-    title: 'Services',
-    href: '#services',
-  },
-  {
-    title: 'Contact',
-    href: '#contact',
-  },
+  { title: 'Projects', href: '#projects', key: 'projects' },
+  { title: 'Testimonials', href: '#testimonials', key: 'testimonials' },
+  { title: 'Services', href: '#services', key: 'services' },
+  { title: 'Contact', href: '#contact', key: 'contact' },
 ]
 
 export const themes = [

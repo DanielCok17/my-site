@@ -1,0 +1,20 @@
+{
+  "title": "Kontakt",
+  "subtitle": "Napíšte mi správu",
+  "description": "Ak máte otázky alebo záujem o spoluprácu, neváhajte ma kontaktovať cez formulár alebo priamo emailom/telefónom.",
+  "contactInfoTitle": "Kontaktné údaje",
+  "form": {
+    "fullName": "Celé meno",
+    "fullNamePlaceholder": "Vaše meno",
+    "email": "Emailová adresa",
+    "emailPlaceholder": "Váš email",
+    "subject": "Predmet",
+    "subjectPlaceholder": "Predmet správy",
+    "message": "Správa",
+    "messagePlaceholder": "Vaša správa",
+    "submit": "Odoslať",
+    "submitting": "Odosielam...",
+    "success": "Správa bola úspešne odoslaná!",
+    "error": "Nastala chyba pri odosielaní. Skúste to znova."
+  }
+} 

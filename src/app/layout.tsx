@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { Suspense } from 'react'
 
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
@@ -118,11 +119,17 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" className={firaCode.className}>
       <body>
         <header>
-          <Navbar />
+          <Suspense fallback={null}>
+            <Navbar />
+          </Suspense>
         </header>
         {children}
-        <ThemeMenu />
-        <Footer />
+        <Suspense fallback={null}>
+          <ThemeMenu />
+        </Suspense>
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -149,4 +156,8 @@ export async function getHeroTranslations(lang: 'en' | 'sk') {
     return (await import('@/messages/hero.sk.json')).default
   }
   return (await import('@/messages/hero.en.json')).default
+}
+
+export async function getTranslations(section: string, lang: 'en' | 'sk') {
+  return (await import(`@/messages/${section}.${lang}.json`)).default
 }
